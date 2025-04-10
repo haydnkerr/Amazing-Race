@@ -57,37 +57,37 @@ function App() {
     <section className="home-btns-container">
     <Link className="home-btn" to="/ChallengePerson">
     <div className="home-btn-title">
-      <h3>The Amazing</h3>
+      <h3>Brooklyn</h3>
       <h2>Race</h2>
     </div>
     </Link>
     <Link className="home-btn" to="/DrawPerson">
     <div className="home-btn-title">
-      <h3>The Amazing</h3>
+      <h3>Brooklyn</h3>
       <h2>Race</h2>
     </div>
     </Link>
     <Link className="home-btn" to="/DrawCelebrity">
     <div className="home-btn-title">
-      <h3>The Amazing</h3>
+      <h3>Brooklyn</h3>
       <h2>Race</h2>
     </div>
     </Link>
     <Link className="home-btn" to="/FinalRiddle">
     <div className="home-btn-title">
-      <h3>The Amazing</h3>
+      <h3>Brooklyn</h3>
       <h2>Race</h2>
     </div>
     </Link>
     <Link className="home-btn" to="/Coodbreakers">
     <div className="home-btn-title">
-      <h3>The Amazing</h3>
+      <h3>Brooklyn</h3>
       <h2>Race</h2>
     </div>
     </Link>
     <Link className="home-btn" to="/CodeBreakersSolo">
     <div className="home-btn-title">
-      <h3>The Amazing</h3>
+      <h3>Brooklyn</h3>
       <h2>Race</h2>
     </div>
     </Link>
