@@ -11,14 +11,14 @@ function ChallengeTemplate(props) {
         <h1>{props.heading}</h1>
             <div className="heading-imgs-container">
             <div className="single-img-container">
-                <img src="/scissors-icon.png"></img>
+                <img src="/Amazing-Race/scissors-icon.png"></img>
                 </div>
                 <div className="single-img-container">
-                    <img src="/paper-icon.png"></img>
+                    <img src="/Amazing-Race/paper-icon.png"></img>
                 </div>
                 
                 <div className="single-img-container">
-                <img src="/rock-icon.png"></img>
+                <img src="/Amazing-Race/rock-icon.png"></img>
                 </div>
             </div>
         </div>
