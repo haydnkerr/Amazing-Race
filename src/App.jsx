@@ -91,6 +91,18 @@ function App() {
       <h2>Race</h2>
     </div>
     </Link>
+    <Link className="home-btn" to="/RubixCube">
+    <div className="home-btn-title">
+      <h3>Brooklyn</h3>
+      <h2>Race</h2>
+    </div>
+    </Link>
+    <Link className="home-btn" to="/DogSelfie">
+    <div className="home-btn-title">
+      <h3>Brooklyn</h3>
+      <h2>Race</h2>
+    </div>
+    </Link>
     </section>
     </>
 

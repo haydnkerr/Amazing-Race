@@ -8,6 +8,8 @@ import DrawCelebrity from "./DrawCelebrity";
 import FinalRiddle from "./FinalRiddle.jsx";
 import Codebreakers from "./codebreakers";
 import CodebreakersSolo from "./codebreakers-solo";
+import RubixCube from './RubixCube.jsx';
+import DogSelfie from './DogSelfie.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 
 createRoot(document.getElementById('root')).render(
@@ -22,6 +24,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/FinalRiddle" element={<FinalRiddle />} />
         <Route path="/codebreakers" element={<Codebreakers />} />
         <Route path="/codebreakersSolo" element={<CodebreakersSolo />} />
+        <Route path="/RubixCube" element={<RubixCube />} />
+        <Route path="/DogSelfie" element={<DogSelfie />} />
         <Route path="/App" element={<App />} />
       </Routes>
 </BrowserRouter>
