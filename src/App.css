@@ -18,7 +18,7 @@ body {
 
 #root {
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -81,7 +81,7 @@ body {
   align-items: center;
   border-radius: 10px;
   width: 100%;
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 800;
@@ -96,7 +96,7 @@ body {
   display: grid;
   gap: 5px;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 
@@ -128,7 +128,7 @@ body {
 }
 
 .challenge-container {
-  height: 100%;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
