@@ -81,7 +81,7 @@ body {
   align-items: center;
   border-radius: 10px;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 800;
@@ -190,7 +190,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px 25px 25px 25px;
+  padding: 40px 15px 15px 15px;
 }
 
 .numpad {
