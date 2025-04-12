@@ -27,8 +27,11 @@ function ChallengeTemplate(props) {
         <div className="challenge-card-container">
             <div className="inner-challenge-card inner-bottom">
             <p>{props.description}</p>
+            <div>
             <Btn class="complete-btn" text="Complete" />
             <button className="complete-btn" value={props.value}>Complete</button>
+            </div>
+
             </div>
         
         </div>
