@@ -105,15 +105,15 @@ body {
   background-color: black;
   color: white;
   text-align: center;
-  margin: 50px 0px;
+  margin: 40px 0px;
   padding: 10px 0px 25px 10px;
 }
 
 .home-btn-title h2 {
   color: #f4bc4d;
   text-transform: uppercase;
-  line-height: 75px;
-  font-size: 7rem;
+  line-height: 60px;
+  font-size: 5.1rem;
   letter-spacing: 30px;
   font-weight: 900;
   text-align: center;
@@ -121,7 +121,7 @@ body {
 
 .home-btn-title h3 {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1rem;
   letter-spacing: 30px;
   font-weight: 800;
   text-align: center;
