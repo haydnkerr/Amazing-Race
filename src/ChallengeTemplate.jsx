@@ -5,20 +5,20 @@ import Btn from "./Btn";
 function ChallengeTemplate(props) {
 
     return <div className="challenge-container">
-        <Header />
+       
         <div className="challenge-card-container inner-top">
         <div className="inner-challenge-card " style={{backgroundColor: props.bgColor}}>
         <h1>{props.heading}</h1>
             <div className="heading-imgs-container">
             <div className="single-img-container">
-                <img src="/Amazing-Race/scissors-icon.png"></img>
+                <img src={props.sourceOne}></img>
                 </div>
                 <div className="single-img-container">
-                    <img src="/Amazing-Race/paper-icon.png"></img>
+                    <img src={props.sourceTwo}></img>
                 </div>
                 
                 <div className="single-img-container">
-                <img src="/Amazing-Race/rock-icon.png"></img>
+                <img src={props.sourceThree}></img>
                 </div>
             </div>
         </div>
@@ -27,9 +27,13 @@ function ChallengeTemplate(props) {
         <div className="challenge-card-container">
             <div className="inner-challenge-card inner-bottom">
             <p>{props.description}</p>
-            <div>
+            <div class="btn-container">
+            <div class="double-btn-continer">
+            <Header />
             <Btn class="complete-btn" text="Complete" />
-            <button className="complete-btn" value={props.value}>Complete</button>
+            </div>
+            
+            
             </div>
 
             </div>

@@ -4,6 +4,9 @@ import ChallengeTemplate from './ChallengeTemplate';
 function FinalRiddle() {
     return <ChallengeTemplate 
     heading="The Home Stretch" 
+    sourceOne="/Amazing-Race/beer-icon.png"
+    sourceTwo="/Amazing-Race/garage-icon.png"
+    sourceThree="/Amazing-Race/run-icon.png"
     bgColor="#94b14f"
     description="Where engines rumble and tools are stored,
 A place with drinks where friends are adored.
