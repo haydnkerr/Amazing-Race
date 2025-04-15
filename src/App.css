@@ -140,7 +140,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 75px;
+  /* padding-bottom: 75px; */
 }
 
 .challenge-card-container {
