@@ -199,7 +199,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 15px 15px 15px;
+  padding: 25px 15px 15px 15px;
 }
 
 .numpad {
