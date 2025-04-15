@@ -15,7 +15,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-  <BrowserRouter basename="/Amazing-Race">
+  <BrowserRouter basename="/Amazing-Race/">
    <Routes>
         <Route path="/" element={<App />} />
         <Route path="/ChallengePerson" element={<ChallengePerson />} />

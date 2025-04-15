@@ -5,7 +5,7 @@ import Btn from "./Btn";
 
 function Header() {
     return <>
-    <Link className="header" to="/App">
+    <Link className="header" to="/">
     {/* <img className="header-img" src="/Amazing-Race/home-icon.png">
         </img> */}
         <Btn class="complete-btn go-back-btn" text="Go Back" />

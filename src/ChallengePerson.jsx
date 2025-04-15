@@ -1,8 +1,12 @@
 import React from 'react';
 import ChallengeTemplate from './ChallengeTemplate';
 
-function ChallengePerson() {
-    return <ChallengeTemplate 
+function ChallengePerson(props) {
+    function handleClick() {
+        props.onClick()
+    }
+    return<>
+    <ChallengeTemplate 
     heading="Ultimate Game Showdown" 
     bgColor="#94b14f"
     description="Find a stranger and challenge them to a game of your choosing. The first team member to win two out of three rounds moves on. Each team member must face a new opponent, and no game type can be repeated across your team!"
@@ -10,7 +14,9 @@ function ChallengePerson() {
     sourceOne="/Amazing-Race/scissors-icon.png"
     sourceTwo="/Amazing-Race/paper-icon.png"
     sourceThree="/Amazing-Race/rock-icon.png"
-    />;
+    onClick={handleClick}
+    />
+    </>;
 }
 
 export default ChallengePerson;
