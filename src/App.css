@@ -44,7 +44,7 @@ body {
   grid-template-columns: 1fr;
   gap: 15px;
   width: 100%;
-  padding: 25px 0px;
+  padding: 10px 0px 25px 0px;
   overflow: scroll;
   height: 100%;
 }
@@ -140,6 +140,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  padding-bottom: 75px;
 }
 
 .challenge-card-container {
