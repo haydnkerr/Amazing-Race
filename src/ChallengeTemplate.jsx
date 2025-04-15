@@ -18,7 +18,6 @@ function ChallengeTemplate(props) {
   };
 
     return <div className="challenge-container">
-       <h1>{level}</h1>
         <div className="challenge-card-container inner-top">
         <div className="inner-challenge-card " style={{backgroundColor: props.bgColor}}>
         <h1>{props.heading}</h1>
