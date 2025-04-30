@@ -55,7 +55,7 @@ function KeycodeDisplay(props) {
 
         <div className="numpad">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
-                <button key={num} value={num} onClick={handleClick}>{num}</button>
+                <button className="keypad-btn" key={num} value={num} onClick={handleClick}>{num}</button>
             ))}
         </div>
         <button className="backspace-btn" onClick={backspaceEvent}>Backspace</button>
