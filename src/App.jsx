@@ -4,12 +4,23 @@ import KeycodeDisplay from "./keycodeDisplay";
 import { Link } from 'react-router-dom';
 import Envelope from "./envelope";
 import ChallengeTemplate from "./ChallengeTemplate";
+import Codebreakers from "./codebreakers";
+import PuzzleKey from "./puzzleKey";
+import Btn from "./Btn";
 
 
 
 function App() {
+  const puzzleKey = 3171249;
+  const [firstPuzzle, setFirstPuzzle] = useState(() => {
+    const storedValue = localStorage.getItem('firstPuzzle');
+    return storedValue !== null ? JSON.parse(storedValue) : true;
+  });
   const [currentChallenge, setCurrentChallenge] = useState(0);
-  const [openChallenge, setOpenChallenge] = useState(false)
+  const [openChallenge, setOpenChallenge] = useState(false);
+  const [homeScreen, setHomeScreen] = useState(true);
+  const [amazingRace, setAmazingRace] = useState(false);
+  const [localChallenge, setLocalChallenge] = useState(false);
   const [gameLevel, setGameLevel] = useState(1);
   const [keysAmount, setKeysAmount] = useState(1);
   const [correctCode, setCorrectCode] = useState("3");
@@ -30,7 +41,6 @@ function App() {
     { path: "/DrawPerson", active: false  },
     { path: "/DrawCelebrity" },
     { path: "/FinalRiddle" },
-    { path: "/Coodbreakers" },
     { path: "/CodeBreakersSolo" },
     { path: "/RubixCube" },
     { path: "/DogSelfie" }
@@ -54,11 +64,44 @@ function App() {
     return codes[level] || "000000000"; 
   }
 
+  function firstPuzzleComplete() {
+    setFirstPuzzle(false)
+  }
+
+  function clearFirstPuzzle() {
+    setFirstPuzzle(true)
+  }
+
+  useEffect(() => {
+    localStorage.setItem('firstPuzzle', JSON.stringify(firstPuzzle));
+  }, [firstPuzzle]);
+
   function updateEnvelope(index){
     if (openChallenge) {
       setOpenChallenge(false)
     } else {
       setOpenChallenge(true)
+    }
+  }
+
+  function openSurvivorChallenge() {
+    if (localChallenge) {
+      setLocalChallenge(false)
+      setHomeScreen(true)
+    } else {
+      setLocalChallenge(true)
+      setHomeScreen(false)
+    }
+  }
+
+  function openAmazingRace() {
+    console.log("click Amazing")
+    if (amazingRace) {
+      setAmazingRace(false)
+      setHomeScreen(true)
+    } else {
+      setAmazingRace(true)
+      setHomeScreen(false)
     }
     
   }
@@ -73,6 +116,7 @@ function App() {
         i === index ? { ...page, active: true } : page
       )
     );
+
 }
 
   useEffect(() => {
@@ -100,7 +144,11 @@ function App() {
 
   let content;
 
-if (!openChallenge) {
+  if (firstPuzzle && !localChallenge) {
+    content = (
+    <PuzzleKey firstPuzzleComplete={firstPuzzleComplete} onClick={openAmazingRace} />
+  )
+  } else if (!openChallenge && !localChallenge) {
   content = (
     <section className="home-btns-container">
       {activeEnvelopes.map(({ complete, active }, index) => (
@@ -111,51 +159,49 @@ if (!openChallenge) {
           onClick={active && currentChallenge == index ? () => updateEnvelope(index) : undefined}
         />
       ))}
+
+      <button class="complete-btn no-border" onClick={clearFirstPuzzle}>Restart</button>
     </section>
   );
+} else if (!openChallenge && localChallenge) {
+  content = (
+    <>
+    <Codebreakers  onClick={openSurvivorChallenge} />
+    </>
+  );
+
 } else if (currentChallenge === 0) {
   content = (
     <ChallengeTemplate
-      heading="Ultimate Game Showdown"
-      bgColor="#94b14f"
-      description="Find a stranger and challenge them to a game of your choosing. The first team member to win two out of three rounds moves on. Each team member must face a new opponent, and no game type can be repeated across your team!"
-      value="2"
-      sourceOne="/Amazing-Race/scissors-icon.png"
-      sourceTwo="/Amazing-Race/paper-icon.png"
-      sourceThree="/Amazing-Race/rock-icon.png"
-      onClick={() => handleClick(1)}
-      handleBack={updateEnvelope}
-    />
+    heading="Ultimate Game Showdown"
+    bgColor="#94b14f"
+    description="Find a stranger and challenge them to a game of your choosing. The first team member to win two out of three rounds moves on. Each team member must face a new opponent, and no game type can be repeated across your team!"
+    value="2"
+    sourceOne="/Amazing-Race/scissors-icon.png"
+    sourceTwo="/Amazing-Race/paper-icon.png"
+    sourceThree="/Amazing-Race/rock-icon.png"
+    onClick={() => handleClick(1)}
+    handleBack={updateEnvelope}
+  />
+    
+
   );
 } else if (currentChallenge === 1) {
-  content = (
-    <ChallengeTemplate
-      heading="Draw and Deal"
-      sourceOne="/Amazing-Race/pencil-icon.png"
-      sourceTwo="/Amazing-Race/face-icon.png"
-      sourceThree="/Amazing-Race/money-canvas.png"
-      bgColor="#4489ce"
-      description="Team members have to draw a passerby in exchange for an item or money. The catch is that the person being drawn must agree to accept the artwork and give something in return! Be sure to take a photo of the person with their sketch."
-      value="1"
-      onClick={() => handleClick(2)}
-      handleBack={updateEnvelope}
-    />
-  );
-} else if (currentChallenge === 2) {
   content = (
     <ChallengeTemplate
     heading="Can I Pat That Dog?" 
     sourceOne="/Amazing-Race/phone-icon.png"
     sourceTwo="/Amazing-Race/dog-icon.png"
     sourceThree="/Amazing-Race/beach-icon.png"
-    bgColor="#94b14f"
-    description="Where there's a beach, there's a dog. At this location each team member much take a selfie with a different dog. Record their name on the list below."
+    bgColor="#4489ce"
+    description="Where there's a beach, there's a dog. At this location each team member must take a selfie with a different dog with the camera provided. Record the dogs name on a piece of paper."
       value="1"
-      onClick={() => handleClick(3)}
+      onClick={() => handleClick(2)}
       handleBack={updateEnvelope}
     />
+    
   );
-} else if (currentChallenge === 3) {
+} else if (currentChallenge === 2) {
   content = (
     <ChallengeTemplate
     heading="Famous Faces" 
@@ -165,9 +211,23 @@ if (!openChallenge) {
     bgColor="#ba5b34"
     description="Select one team member to draw a celebrity of your choice. They’ll then need to ask a passerby to guess who the celebrity is, with absolutely no hints! If the passerby doesn’t guess correctly on the first try, you’ll need to find someone else."
     value="1"
-      onClick={() => handleClick(4)}
+      onClick={() => handleClick(3)}
       handleBack={updateEnvelope}
     />
+  );
+} else if (currentChallenge === 3) {
+  content = (
+    <ChallengeTemplate
+    heading="Paper Plane Derby"
+    sourceOne="/Amazing-Race/pencil-icon.png"
+    sourceTwo="/Amazing-Race/face-icon.png"
+    sourceThree="/Amazing-Race/money-canvas.png"
+    bgColor="#94b14f"
+    description="Have a team member stand on each plate of a baseball diamind. Starting from home one person must throw a paper airplane to first base within three throws. Then that person will throw to second and so on until you score a homerun. If you don't get there in three throws you must start from the beginning If the fields are all taken, four people stand in a line 30 steps apart each."
+    value="1"
+    onClick={() => handleClick(4)}
+    handleBack={updateEnvelope}
+  />
   );
 } else if (currentChallenge === 4) {
   content = (
@@ -177,7 +237,7 @@ if (!openChallenge) {
       sourceTwo="/Amazing-Race/face-icon.png"
       sourceThree="/Amazing-Race/money-canvas.png"
       bgColor="#4489ce"
-      description="Team members have to draw a passerby..."
+      description="Team members have to draw a passerby in exchange for an item or money. The catch is that the person being drawn must agree to accept the artwork and give something in return! Be sure to take a photo of the person with their sketch."
       value="1"
       onClick={() => handleClick(5)}
       handleBack={updateEnvelope}
@@ -186,16 +246,16 @@ if (!openChallenge) {
 } else if (currentChallenge === 5) {
   content = (
     <ChallengeTemplate
-      heading="Draw and Deal"
-      sourceOne="/Amazing-Race/pencil-icon.png"
-      sourceTwo="/Amazing-Race/face-icon.png"
-      sourceThree="/Amazing-Race/money-canvas.png"
-      bgColor="#4489ce"
-      description="Team members have to draw a passerby..."
-      value="1"
-      onClick={() => handleClick(6)}
-      handleBack={updateEnvelope}
-    />
+    heading="Rubix"
+    sourceOne="/Amazing-Race/cube-icon.png"
+    sourceTwo="/Amazing-Race/puzzle-icon.png"
+    sourceThree="/Amazing-Race/money-canvas.png"
+    bgColor="#ba5b34"
+    description="Team members have to draw a passerby in exchange for an item or money. The catch is that the person being drawn must agree to accept the artwork and give something in return! Be sure to take a photo of the person with their sketch."
+    value="1"
+    onClick={() => handleClick(6)}
+    handleBack={updateEnvelope}
+  />
   );
 } else if (currentChallenge === 6) {
   content = (
@@ -205,16 +265,7 @@ if (!openChallenge) {
     sourceTwo="/Amazing-Race/garage-icon.png"
     sourceThree="/Amazing-Race/run-icon.png"
     bgColor="#94b14f"
-    description={
-      <>
-        Where engines rumble and tools are stored,
-        A place with drinks where friends are adored.
-        It’s not a car, but the name you seek,
-        A <strong>Garage</strong> for brews, where laughter’s unique.
-        At the final stop, a jar you'll see,
-        Guess the beans inside, and victory’s key.
-      </>
-    }
+    description="With brain and braun, plus some artistic flair. You're nearing the end, of this wonderous affair. Like a fish on the line, luck decides your fate. Where your journey began, some beans await."
     
 value="1"
       onClick={() => handleClick(7)}
@@ -222,10 +273,18 @@ value="1"
     />
   );
 } else {
-  content = <p>Unknown challenge!</p>;
+  content = <p>There's no more!</p>;
 }
 
-return <>{content}</>;
+return <>
+
+{homeScreen ? <div className="double-div-container">
+<Btn class="complete-btn go-back-btn" text="Codebreakers" onClick={openSurvivorChallenge} />
+<Btn class="complete-btn go-back-btn" text="Amazing Race" onClick={openAmazingRace} />
+</div> : null}
+{localChallenge ? content : null}
+{amazingRace ? content : null}
+</>
 }
 
 export default App;

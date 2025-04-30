@@ -4,49 +4,30 @@ import KeycodeDisplay from "./keycodeDisplay";
 import Btn from "./Btn";
 
 
-function Codebreakers(props) {
+function PuzzleKey(props) {
   const [gameLevel, setGameLevel] = useState(1);
-  const [keysAmount, setKeysAmount] = useState(1);
-  const [correctCode, setCorrectCode] = useState("3");
+  const [keysAmount, setKeysAmount] = useState(7);
+  const [correctCode, setCorrectCode] = useState('3171249');
   const [bgColor, setBgColor] = useState("#242424")
 
-  function getPredefinedCode(level) {
-    const codes = {
-      1: "3",
-      2: "73",
-      3: "591",
-      4: "8234",
-      5: "26785",
-      6: "137942",
-      7: "8642379",
-      8: "31269675",
-      9: "198245418",
-      10: "5473821693",
-      11: "48152216258",
-      12: "398926174283"
-    };
-    return codes[level] || "000000000"; 
-  }
+  const puzzleKey = '3171249';
 
   function handleClick() {
     props.onClick()
   }
 
+
   useEffect(() => {
-    setCorrectCode(getPredefinedCode(keysAmount));
-    if (gameLevel === 13) {
-      alert("You Win!!")
-    }
+    console.log("New Correct Code:", correctCode);
   }, [keysAmount]);
 
   const checkWinner = (userCode) => {
     console.log("Checking:", userCode, "against", correctCode);    
     if (userCode === correctCode) {
       console.log("Winner!");
-      setGameLevel((prev) => prev + 1);
-      setKeysAmount((prev) => prev + 1);
       setBgColor('green');
-  
+      props.firstPuzzleComplete()
+      
     } else {
       console.log("Not yet.");
       setBgColor('red');
@@ -68,4 +49,4 @@ function Codebreakers(props) {
   );
 }
 
-export default Codebreakers;
+export default PuzzleKey;
