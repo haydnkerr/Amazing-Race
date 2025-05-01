@@ -218,9 +218,9 @@ function App() {
   content = (
     <ChallengeTemplate
     heading="Paper Plane Derby"
-    sourceOne="/Amazing-Race/pencil-icon.png"
-    sourceTwo="/Amazing-Race/face-icon.png"
-    sourceThree="/Amazing-Race/money-canvas.png"
+    sourceOne="/Amazing-Race/paperplane-icon.png"
+    sourceTwo="/Amazing-Race/plate-icon.png"
+    sourceThree="/Amazing-Race/handshake-icon.png"
     bgColor="#94b14f"
     description="Have a team member stand on each plate of a baseball diamond. Starting from home one person must throw a paper airplane to first base within three throws. Then that person will throw to second and so on until you score a homerun. If you don't get there in three throws you must start from the beginning. If the fields are all taken, make your own field."
     value="1"
