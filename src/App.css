@@ -231,11 +231,12 @@ gap: 10px;
   gap: 5px;
   width: 100%;
   margin-bottom: 15px;
+  min-height: 200px;
 }
 
 .keypad-btn {
   color: white;
-  background-color: #1a1a1a;
+  background-color: #3a3a3a;
 }
 
 .guess-input-container {
