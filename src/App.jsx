@@ -32,7 +32,6 @@ function App() {
     { active: false, complete: false },
     { active: false, complete: false },
     { active: false, complete: false },
-    { active: false, complete: false },
     { active: false, complete: false }
   ])
 
@@ -223,7 +222,7 @@ function App() {
     sourceTwo="/Amazing-Race/face-icon.png"
     sourceThree="/Amazing-Race/money-canvas.png"
     bgColor="#94b14f"
-    description="Have a team member stand on each plate of a baseball diamind. Starting from home one person must throw a paper airplane to first base within three throws. Then that person will throw to second and so on until you score a homerun. If you don't get there in three throws you must start from the beginning If the fields are all taken, four people stand in a line 30 steps apart each."
+    description="Have a team member stand on each plate of a baseball diamond. Starting from home one person must throw a paper airplane to first base within three throws. Then that person will throw to second and so on until you score a homerun. If you don't get there in three throws you must start from the beginning If the fields are all taken, four people stand in a line 30 steps apart each."
     value="1"
     onClick={() => handleClick(4)}
     handleBack={updateEnvelope}
