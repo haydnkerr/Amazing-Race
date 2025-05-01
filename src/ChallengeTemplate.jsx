@@ -41,8 +41,8 @@ function ChallengeTemplate(props) {
             <p>{props.description}</p>
             <div className="btn-container">
             <div className="double-btn-continer">
-            <Btn class="complete-btn go-back-btn" text="Go Back" onClick={handleBack}  />
-            <Btn class="complete-btn" text="Complete" onClick={handleComplete} />
+            <Btn class="complete-btn go-back-btn" text="Back" onClick={handleBack}  />
+            <Btn class="complete-btn" text="Done" onClick={handleComplete} />
             </div>
             
             

@@ -48,8 +48,8 @@ function App() {
 
   function getPredefinedCode(level) {
     const codes = {
-      1: "3",
-      2: "73",
+      1: "1",
+      2: "33",
       3: "591",
       4: "8234",
       5: "26785",
