@@ -175,6 +175,12 @@ gap: 10px;
   flex: 1;
 }
 
+.challenge-card-img {
+  width: 100%;
+  max-width: 225px;
+  align-self: center;
+}
+
 .challenge-card-container h1 {
   text-align: center;
   text-transform: uppercase;

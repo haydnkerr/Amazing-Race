@@ -39,6 +39,7 @@ function ChallengeTemplate(props) {
         <div className="challenge-card-container">
             <div className="inner-challenge-card inner-bottom">
             <p>{props.description}</p>
+            <img className="challenge-card-img" src={props.image}></img>
             <div className="btn-container">
             <div className="double-btn-continer">
             <Btn class="complete-btn go-back-btn" text="Back" onClick={handleBack}  />

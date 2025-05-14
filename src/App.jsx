@@ -245,18 +245,37 @@ function App() {
 } else if (currentChallenge === 5) {
   content = (
     <ChallengeTemplate
-    heading="Rubix"
-    sourceOne="/Amazing-Race/cube-icon.png"
-    sourceTwo="/Amazing-Race/puzzle-icon.png"
-    sourceThree="/Amazing-Race/money-canvas.png"
-    bgColor="#ba5b34"
-    description="Team members have to draw a passerby in exchange for an item or money. The catch is that the person being drawn must agree to accept the artwork and give something in return! Be sure to take a photo of the person with their sketch."
+    heading='Peace, Love & "Harmony"'
+    sourceOne="/Amazing-Race/peace-icon.png"
+    sourceTwo="/Amazing-Race/heart-icon.png"
+    sourceThree="/Amazing-Race/puzzle-icon.png"
+    image="/Amazing-Race/lady.webp"
+    bgColor="#ba5b34" 
+    description="Within the confines of a fence, fueled by laughter and play. 
+    You'll find children of plenty, in chaos, perhaps dismay. At the feet of a female statue, that watches over this place. Complete the puzzle you chose, at the start of this race."
     value="1"
     onClick={() => handleClick(6)}
     handleBack={updateEnvelope}
   />
   );
 } else if (currentChallenge === 6) {
+  content = (
+    <ChallengeTemplate
+    heading="Café Roblox"
+    sourceOne="/Amazing-Race/heart-icon.png"
+    sourceTwo="/Amazing-Race/puzzle-icon.png"
+    sourceThree="/Amazing-Race/statue-icon.png"
+    bgColor="#ba5b34"
+    description="Within the confines of a fence, fueled by laughter and play. 
+                You'll find children of plenty, in chaos, perhaps dismay. 
+                At the feet of a female statue, that watches over this place. 
+                Complete the puzzle you chose, at the start of this race."
+    value="1"
+    onClick={() => handleClick(7)}
+    handleBack={updateEnvelope}
+  />
+  );
+} else if (currentChallenge === 7) {
   content = (
     <ChallengeTemplate
     heading="The Home Stretch" 
@@ -267,7 +286,7 @@ function App() {
     description="With brain and braun, plus some artistic flair. You're nearing the end, of this wonderous affair. Like a fish on the line, luck decides your fate. Where your journey began, some beans await."
     
 value="1"
-      onClick={() => handleClick(7)}
+      onClick={() => handleClick(8)}
       handleBack={updateEnvelope}
     />
   );
