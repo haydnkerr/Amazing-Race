@@ -180,6 +180,7 @@ gap: 10px;
   width: 100%;
   max-width: 275px;
   align-self: center;
+  margin: 15px 0px;
 }
 
 .challenge-card-container h1 {
