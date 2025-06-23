@@ -164,6 +164,7 @@ gap: 10px;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 10px 50px 10px;
+  overflow: scroll;
 }
 
 .challenge-card-container {
@@ -177,7 +178,7 @@ gap: 10px;
 
 .challenge-card-img {
   width: 100%;
-  max-width: 225px;
+  max-width: 275px;
   align-self: center;
 }
 
