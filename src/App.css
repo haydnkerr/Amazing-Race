@@ -159,7 +159,8 @@ gap: 10px;
 } */
 
 .challenge-container {
-  height: 100dvh;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
