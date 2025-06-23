@@ -195,7 +195,7 @@ function App() {
         sourceTwo="/Amazing-Race/dog-icon.png"
         sourceThree="/Amazing-Race/beach-icon.png"
         bgColor="#4489ce"
-        description="Where there's a beach, there's a dog. At this location each team member must take a selfie with a different dog with the camera provided. Record the dogs name on a piece of paper."
+        description="Where there's a beach, there's a dog. At this location each team member must take a selfie with a different dog. Bonus points if you remember the dogs names."
         value="1"
         onClick={() => handleClick(2)}
         handleBack={updateEnvelope}
@@ -263,11 +263,11 @@ function App() {
     content = (
       <ChallengeTemplate
         heading="Café Roblox"
-        sourceOne="/Amazing-Race/heart-icon.png"
-        sourceTwo="/Amazing-Race/puzzle-icon.png"
-        sourceThree="/Amazing-Race/statue-icon.png"
+        sourceOne="/Amazing-Race/coffee-icon.png"
+        sourceTwo="/Amazing-Race/chopsticks-icon.png"
+        sourceThree="/Amazing-Race/dice-icon.png"
         bgColor="#ba5b34"
-        description="I gave up making more riddles. Run to the Picnic House, then only using chopsticks stack all 6 dice in a tower. With the numbers facing you it must show 1, 2, 3, 4, 5, 6 from bottom to top."
+        description="I gave up making more riddles. Run to the Picnic House. Using chopsticks provided stack all 6 dice in a tower formation. One side of the tower must show 1, 2, 3, 4, 5, 6 from bottom to top."
         value="1"
         onClick={() => handleClick(7)}
         handleBack={updateEnvelope}
