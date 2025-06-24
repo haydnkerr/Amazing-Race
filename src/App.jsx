@@ -178,7 +178,7 @@ function App() {
       <ChallengeTemplate
         heading="Ultimate Game Showdown"
         bgColor="#94b14f"
-        description="Find a stranger and challenge them to a game of your choosing. The first team member to win two out of three rounds moves on. Each team member must face a new opponent, and no game type can be repeated across your team!"
+        description="Find a stranger and challenge them to a game of your choosing. Once a team member wins two out of three rounds they're done. Each team member must face a new opponent, and no game type can be repeated across your team!"
         value="2"
         sourceOne="/Amazing-Race/scissors-icon.png"
         sourceTwo="/Amazing-Race/paper-icon.png"
@@ -237,7 +237,7 @@ function App() {
         sourceTwo="/Amazing-Race/face-icon.png"
         sourceThree="/Amazing-Race/money-canvas.png"
         bgColor="#4489ce"
-        description="Team members have to draw a passerby in exchange for an item or money. The catch is that the person being drawn must agree to accept the artwork and give something in return! Be sure to take a photo of the person with their sketch."
+        description="Team members have to draw a passerby in exchange for an item or money (paperclip, gum etc.) The catch is that the person being drawn must agree to accept the artwork and give something in return! Be sure to take a photo of the person with their sketch."
         value="1"
         onClick={() => handleClick(5)}
         handleBack={updateEnvelope}
@@ -253,7 +253,7 @@ function App() {
         image="/Amazing-Race/lady.webp"
         bgColor="#ba5b34"
         description="Within the confines of a fence, fueled by laughter and play. 
-    You'll find children of plenty, in chaos, perhaps dismay. At the feet of a female statue, that watches over this place. Complete the puzzle you chose, at the start of this race."
+    You'll find children of plenty, in chaos, perhaps dismay. At the feet of a female statue, that watches over this place. Complete the puzzle you chose, at the start of this race. *A hint is in the name"
         value="1"
         onClick={() => handleClick(6)}
         handleBack={updateEnvelope}
@@ -267,7 +267,7 @@ function App() {
         sourceTwo="/Amazing-Race/chopsticks-icon.png"
         sourceThree="/Amazing-Race/dice-icon.png"
         bgColor="#ba5b34"
-        description="I gave up making more riddles. Run to the Picnic House. Using chopsticks provided stack all 6 dice in a tower formation. One side of the tower must show 1, 2, 3, 4, 5, 6 from bottom to top."
+        description="I gave up making more riddles. Run to the Picnic House. Using the chopsticks provided stack all 6 dice in a single tower formation. One side of the tower must show 1, 2, 3, 4, 5, 6 from bottom to top."
         value="1"
         onClick={() => handleClick(7)}
         handleBack={updateEnvelope}
