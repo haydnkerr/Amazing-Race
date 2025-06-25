@@ -178,7 +178,7 @@ function App() {
       <ChallengeTemplate
         heading="Ultimate Game Showdown"
         bgColor="#94b14f"
-        description="Find a stranger and challenge them to a game of your choosing. Once a team member wins two out of three rounds they're done. Each team member must face a new opponent, and no game type can be repeated across your team!"
+        description="Find a stranger and challenge them to a game of your choosing. Once a team member wins two out of three rounds they're done. Three team members must face a new opponent, and no game type can be repeated across your team!"
         value="2"
         sourceOne="/Amazing-Race/scissors-icon.png"
         sourceTwo="/Amazing-Race/paper-icon.png"
@@ -195,7 +195,7 @@ function App() {
         sourceTwo="/Amazing-Race/dog-icon.png"
         sourceThree="/Amazing-Race/beach-icon.png"
         bgColor="#4489ce"
-        description="Where there's a beach, there's a dog. At this location each team member must take a selfie with a different dog. Bonus points if you remember the dogs names."
+        description="Where there's a beach, there's a dog. At this location three team members must take a selfie with a different dog. Bonus points if you remember the dogs names."
         value="1"
         onClick={() => handleClick(2)}
         handleBack={updateEnvelope}
