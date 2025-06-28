@@ -267,7 +267,7 @@ function App() {
         sourceTwo="/Amazing-Race/chopsticks-icon.png"
         sourceThree="/Amazing-Race/dice-icon.png"
         bgColor="#ba5b34"
-        description="I gave up making more riddles. Run to the Picnic House. Using the chopsticks provided stack all 6 dice in a single tower formation. One side of the tower must show 1, 2, 3, 4, 5, 6 from bottom to top."
+        description="I gave up making more riddles. Run to the Picnic House. Using the chopsticks provided stack all 6 dice in a single tower formation. Goodluck!"
         value="1"
         onClick={() => handleClick(7)}
         handleBack={updateEnvelope}
